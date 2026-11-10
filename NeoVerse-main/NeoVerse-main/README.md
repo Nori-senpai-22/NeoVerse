@@ -61,6 +61,41 @@ either of these accounts:
 | `alex_sys` | `secure123` | High |
 | `sarah_ai` | `neo2035` | Medium |
 
+## After Login
+
+After a successful login, the program displays the main NeoVerse control menu.
+Use the number keys to choose an action and press Enter after each input.
+
+Available options:
+
+1. Add sensor reading
+2. Remove outdated sensor readings
+3. Display sensor readings
+4. Sort & analyze readings
+5. Count critical alerts
+6. Add historical log
+7. Display historical logs
+8. Add standard event
+9. Add emergency override
+10. Process next emergency
+11. Process next standard event
+12. Process events by minimum severity
+13. Show queues / load report
+14. Export sensor readings to CSV
+15. Save engineers & logs
+0. Exit
+
+A simple workflow is:
+
+- Choose `3` to view current sensor data
+- Choose `4` to sort and analyze readings
+- Choose `8` or `9` to create events
+- Choose `13` to inspect queue and load status
+- Choose `0` when you are finished
+
+This lets you explore the simulation immediately after authentication without
+needing to read the source code first.
+
 ## Features Demonstrated
 
 - Engineer authentication using `std::vector` and `std::find_if`
