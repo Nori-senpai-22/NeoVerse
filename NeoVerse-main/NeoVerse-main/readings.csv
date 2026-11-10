@@ -1,0 +1,5 @@
+Timestamp,SensorType,Value
+1001,Temperature,38.5
+1002,Radiation,12.1
+1003,TrafficDensity,85
+0,,0

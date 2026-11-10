@@ -19,37 +19,44 @@ NeoVerse-main/
 |-- README.md
 ```
 
-## Build and Run on Windows
+## How to Run the Application
 
-Open PowerShell in the project folder and run:
+Open a terminal in the project folder. Build the application the first time, or
+after changing the source code, then run the generated executable. On later runs,
+you can skip the build command and launch the executable directly.
+
+### Windows
+
+These commands are for PowerShell, not Bash. Open PowerShell in the folder that
+contains the outer `NeoVerse-main` folder, then run:
 
 ```powershell
-cd path\to\NeoVerse-main
-g++ -std=c++14 src\*.cpp -Iinclude -o neoverse_sim.exe
+cd .\NeoVerse-main\NeoVerse-main
+$sourceFiles = Get-ChildItem .\src\*.cpp | ForEach-Object { $_.FullName }
+g++ -std=c++14 $sourceFiles -I .\include -o .\neoverse_sim.exe
+\.\neoverse_sim.exe
+```
+
+If PowerShell is already in the project folder (the folder containing `src` and
+`include`), skip the `cd` line. To launch the program again after building, run:
+
+```powershell
 .\neoverse_sim.exe
 ```
 
-If your terminal is already open in the project folder, you only need:
+### macOS or Linux
 
-```powershell
-.\neoverse_sim.exe
-```
-
-If your terminal is open in the parent folder containing `NeoVerse-main`, run:
-
-```powershell
-cd .\NeoVerse-main
-.\neoverse_sim.exe
-```
-
-## Build and Run on macOS or Linux
-
-Open a terminal in the project folder and run:
+In Bash, do not use the Windows `.exe` command or backslash paths. For this
+workspace, if your terminal is at `/workspaces/NeoVerse`, run:
 
 ```bash
+cd NeoVerse-main/NeoVerse-main
 g++ -std=c++14 src/*.cpp -Iinclude -o neoverse_sim
 ./neoverse_sim
 ```
+
+If your terminal is already in the project folder (the folder containing
+`src/` and `include/`), skip the `cd` command.
 
 ## Login Credentials
 
